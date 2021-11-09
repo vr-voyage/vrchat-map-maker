@@ -67,7 +67,6 @@ public class MeshBaker : UdonSharpBehaviour
             toCombine[cmb_i].mesh = MeshFromLibrary(library, tile_value);
             toCombine[cmb_i].transform = Matrix4x4.Translate(cur_pos);
             cmb_i++;
-            Debug.Log($"{cmb_i}");
         }
 
         newMesh.CombineMeshes(toCombine);
