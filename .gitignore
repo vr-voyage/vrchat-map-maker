@@ -1,0 +1,44 @@
+# Unity Generated
+[Tt]emp/
+[Ll]ibrary/
+[Ll]ogs/
+[Oo]bj/
+[Pp]ackages/
+![Pp]ackages/manifest.json
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# Visual Studio / MonoDevelop Generated
+*/ExportedObj/
+*/obj/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# OS Generated
+desktop.ini
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode
+Assets/SerializedUdonPrograms*
+Assets/Vket_Exports*
+Assets/Vket_SS*
+Assets/VitDeck
+Assets/VketTools
+Assets/VRChat\ Examples*
+Assets/VRCSDK
+Assets/UdonSharp
+.*.swp
+*.blend1
