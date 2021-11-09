@@ -1,0 +1,795 @@
+{
+	"connections": [
+		{
+			"from": "graph",
+			"from_port": 2,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "uniform_greyscale",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 1
+		},
+		{
+			"from": "graph",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "graph",
+			"from_port": 1,
+			"to": "Material",
+			"to_port": 2
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "1202",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+				"Godot": "C:/Users/tomat/Desktop/LilySurface/test/officechaircloth"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 1136.880005,
+				"y": 61.359997
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": false,
+				"metallic": 1,
+				"normal": 1,
+				"roughness": 1,
+				"size": 9,
+				"sss": 0
+			},
+			"type": "material"
+		},
+		{
+			"name": "uniform_greyscale",
+			"node_position": {
+				"x": 894.594971,
+				"y": 257.058838
+			},
+			"parameters": {
+				"color": 0
+			},
+			"type": "uniform_greyscale"
+		},
+		{
+			"connections": [
+				{
+					"from": "normal_map",
+					"from_port": 0,
+					"to": "gen_outputs",
+					"to_port": 2
+				},
+				{
+					"from": "occlusion",
+					"from_port": 0,
+					"to": "colorize",
+					"to_port": 0
+				},
+				{
+					"from": "colorize",
+					"from_port": 0,
+					"to": "blend",
+					"to_port": 2
+				},
+				{
+					"from": "uniform",
+					"from_port": 0,
+					"to": "blend",
+					"to_port": 1
+				},
+				{
+					"from": "uniform_2",
+					"from_port": 0,
+					"to": "blend",
+					"to_port": 0
+				},
+				{
+					"from": "blend",
+					"from_port": 0,
+					"to": "buffer",
+					"to_port": 0
+				},
+				{
+					"from": "gaussian_blur",
+					"from_port": 0,
+					"to": "normal_map",
+					"to_port": 0
+				},
+				{
+					"from": "buffer_2",
+					"from_port": 0,
+					"to": "gaussian_blur",
+					"to_port": 0
+				},
+				{
+					"from": "buffer",
+					"from_port": 0,
+					"to": "blend_2",
+					"to_port": 1
+				},
+				{
+					"from": "blend_2",
+					"from_port": 0,
+					"to": "gen_outputs",
+					"to_port": 0
+				},
+				{
+					"from": "uniform_2",
+					"from_port": 0,
+					"to": "blend_2",
+					"to_port": 0
+				},
+				{
+					"from": "fbm",
+					"from_port": 0,
+					"to": "blend_2",
+					"to_port": 2
+				},
+				{
+					"from": "colorize",
+					"from_port": 0,
+					"to": "tones_map_2",
+					"to_port": 0
+				},
+				{
+					"from": "tones_map_2",
+					"from_port": 0,
+					"to": "buffer_3",
+					"to_port": 0
+				},
+				{
+					"from": "buffer_3",
+					"from_port": 1,
+					"to": "gen_outputs",
+					"to_port": 1
+				},
+				{
+					"from": "buffer_4",
+					"from_port": 1,
+					"to": "occlusion",
+					"to_port": 0
+				},
+				{
+					"from": "buffer_4",
+					"from_port": 1,
+					"to": "buffer_2",
+					"to_port": 0
+				},
+				{
+					"from": "fbm",
+					"from_port": 0,
+					"to": "tones_map",
+					"to_port": 0
+				},
+				{
+					"from": "tones_map",
+					"from_port": 0,
+					"to": "math_3",
+					"to_port": 0
+				},
+				{
+					"from": "blend_3",
+					"from_port": 0,
+					"to": "buffer_4",
+					"to_port": 0
+				},
+				{
+					"from": "weave",
+					"from_port": 0,
+					"to": "blend_3",
+					"to_port": 0
+				},
+				{
+					"from": "fbm_2",
+					"from_port": 0,
+					"to": "blend_3",
+					"to_port": 1
+				},
+				{
+					"from": "math_3",
+					"from_port": 0,
+					"to": "blend_3",
+					"to_port": 2
+				},
+				{
+					"from": "uniform_greyscale_2",
+					"from_port": 0,
+					"to": "invert",
+					"to_port": 0
+				},
+				{
+					"from": "invert",
+					"from_port": 0,
+					"to": "math",
+					"to_port": 0
+				},
+				{
+					"from": "math",
+					"from_port": 0,
+					"to": "math_3",
+					"to_port": 1
+				},
+				{
+					"from": "gaussian_blur",
+					"from_port": 0,
+					"to": "gen_outputs",
+					"to_port": 3
+				}
+			],
+			"label": "Coarse Uppholstery Fabric",
+			"longdesc": "",
+			"name": "graph",
+			"node_position": {
+				"x": 573.999146,
+				"y": 67.594688
+			},
+			"nodes": [
+				{
+					"name": "math",
+					"node_position": {
+						"x": -1932.831909,
+						"y": 510.656006
+					},
+					"parameters": {
+						"clamp": false,
+						"default_in1": 0,
+						"default_in2": 4,
+						"op": 2
+					},
+					"type": "math"
+				},
+				{
+					"name": "invert",
+					"node_position": {
+						"x": -2132.832031,
+						"y": 530.656006
+					},
+					"parameters": {
+
+					},
+					"type": "invert"
+				},
+				{
+					"name": "blend_3",
+					"node_position": {
+						"x": -972.832031,
+						"y": 170.656006
+					},
+					"parameters": {
+						"amount": 1,
+						"blend_type": 0
+					},
+					"type": "blend"
+				},
+				{
+					"name": "math_3",
+					"node_position": {
+						"x": -1352.832031,
+						"y": 410.655975
+					},
+					"parameters": {
+						"clamp": false,
+						"default_in1": 0,
+						"default_in2": 0,
+						"op": 2
+					},
+					"type": "math"
+				},
+				{
+					"name": "tones_map",
+					"node_position": {
+						"x": -1652.832031,
+						"y": 510.656006
+					},
+					"parameters": {
+						"in_max": 1,
+						"in_min": 0,
+						"out_max": 1,
+						"out_min": 0.18
+					},
+					"type": "tones_map"
+				},
+				{
+					"name": "buffer_4",
+					"node_position": {
+						"x": -692.832031,
+						"y": 170.656006
+					},
+					"parameters": {
+						"lod": 0,
+						"size": 12
+					},
+					"type": "buffer"
+				},
+				{
+					"name": "fbm_2",
+					"node_position": {
+						"x": -1492.832031,
+						"y": 210.656006
+					},
+					"parameters": {
+						"folds": 0,
+						"iterations": 5,
+						"noise": 4,
+						"persistence": 0.5,
+						"scale_x": 256,
+						"scale_y": 256
+					},
+					"type": "fbm"
+				},
+				{
+					"name": "fbm",
+					"node_position": {
+						"x": -1732.831909,
+						"y": 650.656006
+					},
+					"parameters": {
+						"folds": 0,
+						"iterations": 5,
+						"noise": 0,
+						"persistence": 0.5,
+						"scale_x": 3,
+						"scale_y": 3
+					},
+					"type": "fbm"
+				},
+				{
+					"name": "weave",
+					"node_position": {
+						"x": -1472.832031,
+						"y": 50.655994
+					},
+					"parameters": {
+						"columns": 256,
+						"rows": 256,
+						"width": 0.6
+					},
+					"type": "weave"
+				},
+				{
+					"name": "uniform_greyscale_2",
+					"node_position": {
+						"x": -2372.832031,
+						"y": 530.656006
+					},
+					"parameters": {
+						"color": 0.76
+					},
+					"type": "uniform_greyscale"
+				},
+				{
+					"name": "uniform_2",
+					"node_position": {
+						"x": -232.832001,
+						"y": -289.343994
+					},
+					"parameters": {
+						"color": {
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"r": 0,
+							"type": "Color"
+						}
+					},
+					"type": "uniform"
+				},
+				{
+					"name": "uniform",
+					"node_position": {
+						"x": -212.832001,
+						"y": -209.343994
+					},
+					"parameters": {
+						"color": {
+							"a": 1,
+							"b": 0.062745,
+							"g": 0.062745,
+							"r": 0.827451,
+							"type": "Color"
+						}
+					},
+					"type": "uniform"
+				},
+				{
+					"name": "occlusion",
+					"node_position": {
+						"x": -276.332001,
+						"y": -58.844002
+					},
+					"parameters": {
+						"param0": 12,
+						"param2": 1.5
+					},
+					"type": "occlusion"
+				},
+				{
+					"name": "buffer_2",
+					"node_position": {
+						"x": -118.332008,
+						"y": 68.155991
+					},
+					"parameters": {
+						"lod": 0,
+						"size": 12
+					},
+					"type": "buffer"
+				},
+				{
+					"name": "colorize",
+					"node_position": {
+						"x": 54.667999,
+						"y": -76.843994
+					},
+					"parameters": {
+						"gradient": {
+							"interpolation": 1,
+							"points": [
+								{
+									"a": 1,
+									"b": 1,
+									"g": 1,
+									"pos": 0.363636,
+									"r": 1
+								},
+								{
+									"a": 1,
+									"b": 0,
+									"g": 0,
+									"pos": 1,
+									"r": 0
+								}
+							],
+							"type": "Gradient"
+						}
+					},
+					"type": "colorize"
+				},
+				{
+					"name": "gaussian_blur",
+					"node_position": {
+						"x": 745.012878,
+						"y": 363.287506
+					},
+					"parameters": {
+						"param0": 12,
+						"param1": 1,
+						"param2": 0
+					},
+					"type": "gaussian_blur"
+				},
+				{
+					"name": "blend",
+					"node_position": {
+						"x": 243.667984,
+						"y": -216.843994
+					},
+					"parameters": {
+						"amount": 0.26,
+						"blend_type": 10
+					},
+					"type": "blend"
+				},
+				{
+					"name": "buffer",
+					"node_position": {
+						"x": 585.66803,
+						"y": -164.844009
+					},
+					"parameters": {
+						"lod": 0,
+						"size": 12
+					},
+					"type": "buffer"
+				},
+				{
+					"name": "tones_map_2",
+					"node_position": {
+						"x": 726.667969,
+						"y": -7.844001
+					},
+					"parameters": {
+						"in_max": 1,
+						"in_min": 0,
+						"out_max": 0.96,
+						"out_min": 0.67
+					},
+					"type": "tones_map"
+				},
+				{
+					"name": "blend_2",
+					"node_position": {
+						"x": 860.66803,
+						"y": -193.843994
+					},
+					"parameters": {
+						"amount": 0.18,
+						"blend_type": 10
+					},
+					"type": "blend"
+				},
+				{
+					"name": "gen_parameters",
+					"node_position": {
+						"x": -923.358459,
+						"y": -334.39093
+					},
+					"parameters": {
+						"param0": 0.18,
+						"param1": 0.76,
+						"param2": 256,
+						"param3": {
+							"a": 1,
+							"b": 0,
+							"g": 0,
+							"r": 0,
+							"type": "Color"
+						},
+						"param4": {
+							"a": 1,
+							"b": 0.062745,
+							"g": 0.062745,
+							"r": 0.827451,
+							"type": "Color"
+						},
+						"param5": 0.18,
+						"param6": 3,
+						"param7": 0.67,
+						"param8": 0.96
+					},
+					"type": "remote",
+					"widgets": [
+						{
+							"label": "Wear Uniformity",
+							"linked_widgets": [
+								{
+									"node": "tones_map",
+									"widget": "out_min"
+								}
+							],
+							"name": "param0",
+							"type": "linked_control"
+						},
+						{
+							"label": "Wear Amount",
+							"linked_widgets": [
+								{
+									"node": "uniform_greyscale_2",
+									"widget": "color"
+								}
+							],
+							"name": "param1",
+							"type": "linked_control"
+						},
+						{
+							"label": "Thread scale",
+							"linked_widgets": [
+								{
+									"node": "weave",
+									"widget": "columns"
+								},
+								{
+									"node": "weave",
+									"widget": "rows"
+								},
+								{
+									"node": "fbm_2",
+									"widget": "scale_x"
+								},
+								{
+									"node": "fbm_2",
+									"widget": "scale_y"
+								}
+							],
+							"name": "param2",
+							"type": "linked_control"
+						},
+						{
+							"label": "Dirt color",
+							"linked_widgets": [
+								{
+									"node": "uniform_2",
+									"widget": "color"
+								}
+							],
+							"name": "param3",
+							"type": "linked_control"
+						},
+						{
+							"label": "Color",
+							"linked_widgets": [
+								{
+									"node": "uniform",
+									"widget": "color"
+								}
+							],
+							"name": "param4",
+							"type": "linked_control"
+						},
+						{
+							"label": "Dirt intensity",
+							"linked_widgets": [
+								{
+									"node": "blend_2",
+									"widget": "amount"
+								}
+							],
+							"name": "param5",
+							"type": "linked_control"
+						},
+						{
+							"label": "Dirt Scale",
+							"linked_widgets": [
+								{
+									"node": "fbm",
+									"widget": "scale_x"
+								},
+								{
+									"node": "fbm",
+									"widget": "scale_y"
+								}
+							],
+							"name": "param6",
+							"type": "linked_control"
+						},
+						{
+							"label": "Roughness Min",
+							"linked_widgets": [
+								{
+									"node": "tones_map_2",
+									"widget": "out_min"
+								}
+							],
+							"name": "param7",
+							"type": "linked_control"
+						},
+						{
+							"label": "Roughness Max",
+							"linked_widgets": [
+								{
+									"node": "tones_map_2",
+									"widget": "out_max"
+								}
+							],
+							"name": "param8",
+							"type": "linked_control"
+						}
+					]
+				},
+				{
+					"name": "buffer_3",
+					"node_position": {
+						"x": 1083.5,
+						"y": 163.5
+					},
+					"parameters": {
+						"lod": 0,
+						"size": 12
+					},
+					"type": "buffer"
+				},
+				{
+					"name": "normal_map",
+					"node_position": {
+						"x": 1083.5,
+						"y": 257.5
+					},
+					"parameters": {
+						"param0": 12,
+						"param1": 0.2,
+						"param2": 0,
+						"param4": 1
+					},
+					"type": "normal_map"
+				},
+				{
+					"name": "gen_inputs",
+					"node_position": {
+						"x": -2672.832031,
+						"y": 114.250687
+					},
+					"parameters": {
+
+					},
+					"ports": [
+
+					],
+					"type": "ios"
+				},
+				{
+					"name": "gen_outputs",
+					"node_position": {
+						"x": 1416.66394,
+						"y": 240.07869
+					},
+					"parameters": {
+
+					},
+					"ports": [
+						{
+							"group_size": 0,
+							"longdesc": "",
+							"name": "Color",
+							"shortdesc": "Color",
+							"type": "rgba"
+						},
+						{
+							"group_size": 0,
+							"longdesc": "",
+							"name": "Roughness",
+							"shortdesc": "Roughness",
+							"type": "rgba"
+						},
+						{
+							"group_size": 0,
+							"longdesc": "",
+							"name": "Normal",
+							"shortdesc": "Normal",
+							"type": "rgb"
+						},
+						{
+							"group_size": 0,
+							"longdesc": "Use with external Normal node or process further for depth",
+							"name": "Height Data",
+							"shortdesc": "Height Data",
+							"type": "rgba"
+						}
+					],
+					"type": "ios"
+				}
+			],
+			"parameters": {
+				"param0": 0.18,
+				"param1": 0.76,
+				"param2": 256,
+				"param3": {
+					"a": 1,
+					"b": 0,
+					"g": 0,
+					"r": 0,
+					"type": "Color"
+				},
+				"param4": {
+					"a": 1,
+					"b": 0.062745,
+					"g": 0.062745,
+					"r": 0.827451,
+					"type": "Color"
+				},
+				"param5": 0.18,
+				"param6": 3,
+				"param7": 0.67,
+				"param8": 0.96
+			},
+			"shortdesc": "",
+			"type": "graph"
+		}
+	],
+	"parameters": {
+
+	},
+	"shortdesc": "",
+	"type": "graph"
+}

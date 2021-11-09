@@ -1,0 +1,836 @@
+{
+	"connections": [
+		{
+			"from": "bricks",
+			"from_port": 6,
+			"to": "blend",
+			"to_port": 0
+		},
+		{
+			"from": "invert",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 0
+		},
+		{
+			"from": "blend_2",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 1
+		},
+		{
+			"from": "transform2",
+			"from_port": 0,
+			"to": "blend",
+			"to_port": 1
+		},
+		{
+			"from": "blend",
+			"from_port": 0,
+			"to": "blend_3",
+			"to_port": 0
+		},
+		{
+			"from": "blend_3",
+			"from_port": 0,
+			"to": "blend_4",
+			"to_port": 1
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "blend_4",
+			"to_port": 0
+		},
+		{
+			"from": "normal_map",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		},
+		{
+			"from": "graph",
+			"from_port": 0,
+			"to": "transform2",
+			"to_port": 0
+		},
+		{
+			"from": "graph",
+			"from_port": 0,
+			"to": "blend_2",
+			"to_port": 1
+		},
+		{
+			"from": "invert_3",
+			"from_port": 0,
+			"to": "blend_5",
+			"to_port": 1
+		},
+		{
+			"from": "blend_5",
+			"from_port": 0,
+			"to": "normal_map",
+			"to_port": 0
+		},
+		{
+			"from": "blend_3",
+			"from_port": 0,
+			"to": "tones_map",
+			"to_port": 0
+		},
+		{
+			"from": "tones_map",
+			"from_port": 0,
+			"to": "blend_5",
+			"to_port": 0
+		},
+		{
+			"from": "blend_6",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "blend_4",
+			"from_port": 0,
+			"to": "blend_6",
+			"to_port": 2
+		},
+		{
+			"from": "uniform",
+			"from_port": 0,
+			"to": "blend_6",
+			"to_port": 0
+		},
+		{
+			"from": "uniform_2",
+			"from_port": 0,
+			"to": "blend_6",
+			"to_port": 1
+		},
+		{
+			"from": "blend_3",
+			"from_port": 0,
+			"to": "blend_7",
+			"to_port": 0
+		},
+		{
+			"from": "invert_3",
+			"from_port": 0,
+			"to": "blend_7",
+			"to_port": 1
+		},
+		{
+			"from": "blend_7",
+			"from_port": 0,
+			"to": "tones",
+			"to_port": 0
+		},
+		{
+			"from": "tones",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "bricks",
+			"from_port": 0,
+			"to": "invert_3",
+			"to_port": 0
+		},
+		{
+			"from": "bricks",
+			"from_port": 6,
+			"to": "invert",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "237",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+				"Blender": "C:/Users/Pouip/Desktop/Blender/Materials/Wood",
+				"Unity - 3D": "C:/Users/Pouip/Desktop/Blender/Materials/wood-deusex-1",
+				"Unreal": "C:/Projects/Textures/Wood Planks Floor/Wood Planks_Floor"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 888.363647,
+				"y": -81.645454
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": false,
+				"metallic": 1,
+				"normal": 1,
+				"roughness": 1,
+				"size": 10,
+				"sss": 0
+			},
+			"type": "material"
+		},
+		{
+			"name": "bricks",
+			"node_position": {
+				"x": -1252.363647,
+				"y": -252.863617
+			},
+			"parameters": {
+				"bevel": 0,
+				"columns": 4,
+				"corner": 0.3,
+				"mortar": 0.008,
+				"pattern": 2,
+				"repeat": 1,
+				"round": 0,
+				"row_offset": 0.5,
+				"rows": 4
+			},
+			"type": "bricks"
+		},
+		{
+			"name": "invert",
+			"node_position": {
+				"x": -906.363586,
+				"y": 203.363647
+			},
+			"parameters": {
+
+			},
+			"type": "invert"
+		},
+		{
+			"connections": [
+				{
+					"from": "perlin",
+					"from_port": 0,
+					"to": "blend",
+					"to_port": 0
+				},
+				{
+					"from": "graph",
+					"from_port": 0,
+					"to": "tones",
+					"to_port": 0
+				},
+				{
+					"from": "tones",
+					"from_port": 0,
+					"to": "blend",
+					"to_port": 1
+				},
+				{
+					"from": "blend",
+					"from_port": 0,
+					"to": "gen_outputs",
+					"to_port": 0
+				}
+			],
+			"label": "Wood texture",
+			"longdesc": "",
+			"name": "graph",
+			"node_position": {
+				"x": -1238.727417,
+				"y": 24.81818
+			},
+			"nodes": [
+				{
+					"name": "perlin",
+					"node_position": {
+						"x": -1024.54541,
+						"y": 343.181824
+					},
+					"parameters": {
+						"iterations": 10,
+						"persistence": 0.75,
+						"scale_x": 26,
+						"scale_y": 4
+					},
+					"type": "perlin"
+				},
+				{
+					"name": "gen_inputs",
+					"node_position": {
+						"x": -1167.272705,
+						"y": 360.454529
+					},
+					"parameters": {
+
+					},
+					"ports": [
+
+					],
+					"type": "ios"
+				},
+				{
+					"name": "gen_outputs",
+					"node_position": {
+						"x": -204.181824,
+						"y": 356.818176
+					},
+					"parameters": {
+
+					},
+					"ports": [
+						{
+							"group_size": 0,
+							"name": "Grey",
+							"type": "f"
+						}
+					],
+					"type": "ios"
+				},
+				{
+					"name": "gen_parameters",
+					"node_position": {
+						"x": -1067.272705,
+						"y": 60.454529
+					},
+					"parameters": {
+
+					},
+					"type": "remote",
+					"widgets": [
+
+					]
+				},
+				{
+					"name": "blend",
+					"node_position": {
+						"x": -567.747925,
+						"y": 355.570221
+					},
+					"parameters": {
+						"amount": 0.61,
+						"blend_type": 0
+					},
+					"type": "blend"
+				},
+				{
+					"connections": [
+						{
+							"from": "perlin",
+							"from_port": 0,
+							"to": "transform",
+							"to_port": 1
+						},
+						{
+							"from": "transform_2",
+							"from_port": 0,
+							"to": "gen_outputs",
+							"to_port": 0
+						},
+						{
+							"from": "perlin",
+							"from_port": 0,
+							"to": "transform",
+							"to_port": 2
+						},
+						{
+							"from": "perlin",
+							"from_port": 0,
+							"to": "transform_2",
+							"to_port": 0
+						},
+						{
+							"from": "transform",
+							"from_port": 0,
+							"to": "transform_2",
+							"to_port": 1
+						},
+						{
+							"from": "transform",
+							"from_port": 0,
+							"to": "transform_2",
+							"to_port": 2
+						},
+						{
+							"from": "perlin",
+							"from_port": 0,
+							"to": "transform",
+							"to_port": 0
+						}
+					],
+					"label": "Warp2",
+					"longdesc": "",
+					"name": "graph",
+					"node_position": {
+						"x": -1271.632202,
+						"y": 538.223145
+					},
+					"nodes": [
+						{
+							"name": "transform",
+							"node_position": {
+								"x": -292.25,
+								"y": -629
+							},
+							"parameters": {
+								"repeat": true,
+								"rotate": 0,
+								"scale_x": 1,
+								"scale_y": 1,
+								"translate_x": 0.275,
+								"translate_y": -0.47
+							},
+							"type": "transform"
+						},
+						{
+							"name": "perlin",
+							"node_position": {
+								"x": -558.25,
+								"y": -720
+							},
+							"parameters": {
+								"iterations": 3,
+								"persistence": 0.4,
+								"scale_x": 23,
+								"scale_y": 3
+							},
+							"type": "perlin"
+						},
+						{
+							"name": "gen_inputs",
+							"node_position": {
+								"x": -802.25,
+								"y": -655.5
+							},
+							"parameters": {
+
+							},
+							"ports": [
+
+							],
+							"type": "ios"
+						},
+						{
+							"name": "gen_outputs",
+							"node_position": {
+								"x": 268.75,
+								"y": -656.5
+							},
+							"parameters": {
+
+							},
+							"ports": [
+								{
+									"group_size": 0,
+									"name": "port0",
+									"type": "rgba"
+								}
+							],
+							"type": "ios"
+						},
+						{
+							"name": "gen_parameters",
+							"node_position": {
+								"x": -315.75,
+								"y": -905
+							},
+							"parameters": {
+								"param0": 23,
+								"param1": 3,
+								"param2": 3,
+								"param3": 0.4,
+								"param4": 0.275,
+								"param5": -0.47
+							},
+							"type": "remote",
+							"widgets": [
+								{
+									"label": "Scale X",
+									"linked_widgets": [
+										{
+											"node": "perlin",
+											"widget": "scale_x"
+										}
+									],
+									"name": "param0",
+									"type": "linked_control"
+								},
+								{
+									"label": "Scale Y",
+									"linked_widgets": [
+										{
+											"node": "perlin",
+											"widget": "scale_y"
+										}
+									],
+									"name": "param1",
+									"type": "linked_control"
+								},
+								{
+									"label": "Iterations",
+									"linked_widgets": [
+										{
+											"node": "perlin",
+											"widget": "iterations"
+										}
+									],
+									"name": "param2",
+									"type": "linked_control"
+								},
+								{
+									"label": "Persistance",
+									"linked_widgets": [
+										{
+											"node": "perlin",
+											"widget": "persistence"
+										}
+									],
+									"name": "param3",
+									"type": "linked_control"
+								},
+								{
+									"label": "Warp X",
+									"linked_widgets": [
+										{
+											"node": "transform",
+											"widget": "translate_x"
+										},
+										{
+											"node": "transform_2",
+											"widget": "translate_x"
+										}
+									],
+									"name": "param4",
+									"type": "linked_control"
+								},
+								{
+									"label": "Warp Y",
+									"linked_widgets": [
+										{
+											"node": "transform",
+											"widget": "translate_y"
+										},
+										{
+											"node": "transform_2",
+											"widget": "translate_y"
+										}
+									],
+									"name": "param5",
+									"type": "linked_control"
+								}
+							]
+						},
+						{
+							"name": "transform_2",
+							"node_position": {
+								"x": -32.462402,
+								"y": -714.099976
+							},
+							"parameters": {
+								"repeat": true,
+								"rotate": 0,
+								"scale_x": 1,
+								"scale_y": 1,
+								"translate_x": 0.275,
+								"translate_y": -0.47
+							},
+							"type": "transform"
+						}
+					],
+					"parameters": {
+						"param0": 23,
+						"param1": 3,
+						"param2": 3,
+						"param3": 0.4,
+						"param4": 0.275,
+						"param5": -0.47
+					},
+					"seed_value": -14471,
+					"shortdesc": "",
+					"type": "graph"
+				},
+				{
+					"name": "tones",
+					"node_position": {
+						"x": -868.656982,
+						"y": 533.388367
+					},
+					"parameters": {
+						"in_max": {
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"r": 1,
+							"type": "Color"
+						},
+						"in_mid": {
+							"a": 0.5,
+							"b": 0.284091,
+							"g": 0.284091,
+							"r": 0.284091,
+							"type": "Color"
+						},
+						"in_min": {
+							"a": 0,
+							"b": 0,
+							"g": 0,
+							"r": 0,
+							"type": "Color"
+						},
+						"out_max": {
+							"a": 1,
+							"b": 1,
+							"g": 1,
+							"r": 1,
+							"type": "Color"
+						},
+						"out_min": {
+							"a": 0,
+							"b": 0.346591,
+							"g": 0.346591,
+							"r": 0.346591,
+							"type": "Color"
+						}
+					},
+					"type": "tones"
+				}
+			],
+			"parameters": {
+
+			},
+			"shortdesc": "",
+			"type": "graph"
+		},
+		{
+			"name": "transform2",
+			"node_position": {
+				"x": -850.21698,
+				"y": -39.115723
+			},
+			"parameters": {
+				"mode": 2,
+				"rotate": 90,
+				"scale_x": 1,
+				"scale_y": 1,
+				"translate_x": 0,
+				"translate_y": 0
+			},
+			"type": "transform2"
+		},
+		{
+			"name": "blend",
+			"node_position": {
+				"x": -549.762268,
+				"y": -92.388443
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 2
+			},
+			"type": "blend"
+		},
+		{
+			"name": "blend_2",
+			"node_position": {
+				"x": -702.307922,
+				"y": 181.111557
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 2
+			},
+			"type": "blend"
+		},
+		{
+			"name": "blend_3",
+			"node_position": {
+				"x": -235.580627,
+				"y": -85.297539
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 3
+			},
+			"type": "blend"
+		},
+		{
+			"name": "blend_4",
+			"node_position": {
+				"x": 99.146667,
+				"y": -237.024811
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 2
+			},
+			"type": "blend"
+		},
+		{
+			"name": "normal_map",
+			"node_position": {
+				"x": 361.987671,
+				"y": 120.323578
+			},
+			"parameters": {
+				"param0": 10,
+				"param1": 1,
+				"param2": 0,
+				"param4": 1
+			},
+			"type": "normal_map"
+		},
+		{
+			"name": "invert_3",
+			"node_position": {
+				"x": -101.021729,
+				"y": 336.985229
+			},
+			"parameters": {
+
+			},
+			"type": "invert"
+		},
+		{
+			"name": "blend_5",
+			"node_position": {
+				"x": 131.978271,
+				"y": 123.985229
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 3
+			},
+			"type": "blend"
+		},
+		{
+			"name": "tones_map",
+			"node_position": {
+				"x": -192.021729,
+				"y": 123.985229
+			},
+			"parameters": {
+				"in_max": 0.95,
+				"in_min": 0.15,
+				"out_max": 0.51,
+				"out_min": 0.46
+			},
+			"type": "tones_map"
+		},
+		{
+			"name": "blend_6",
+			"node_position": {
+				"x": 341.978271,
+				"y": -253.014771
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 0
+			},
+			"type": "blend"
+		},
+		{
+			"name": "uniform",
+			"node_position": {
+				"x": 157.978271,
+				"y": -371.014771
+			},
+			"parameters": {
+				"color": {
+					"a": 1,
+					"b": 0.188235,
+					"g": 0.313726,
+					"r": 0.505882,
+					"type": "Color"
+				}
+			},
+			"type": "uniform"
+		},
+		{
+			"name": "uniform_2",
+			"node_position": {
+				"x": 158.978271,
+				"y": -309.014771
+			},
+			"parameters": {
+				"color": {
+					"a": 1,
+					"b": 0.107189,
+					"g": 0.11208,
+					"r": 0.121862,
+					"type": "Color"
+				}
+			},
+			"type": "uniform"
+		},
+		{
+			"name": "blend_7",
+			"node_position": {
+				"x": 126.978271,
+				"y": -73.514771
+			},
+			"parameters": {
+				"amount": 1,
+				"blend_type": 3
+			},
+			"type": "blend"
+		},
+		{
+			"name": "tones",
+			"node_position": {
+				"x": 347.978271,
+				"y": -72.014771
+			},
+			"parameters": {
+				"in_max": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"in_mid": {
+					"a": 0.5,
+					"b": 0.626047,
+					"g": 0.626047,
+					"r": 0.626047,
+					"type": "Color"
+				},
+				"in_min": {
+					"a": 0,
+					"b": 0.206612,
+					"g": 0.206612,
+					"r": 0.206612,
+					"type": "Color"
+				},
+				"out_max": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"out_min": {
+					"a": 0,
+					"b": 0,
+					"g": 0,
+					"r": 0,
+					"type": "Color"
+				}
+			},
+			"type": "tones"
+		}
+	],
+	"parameters": {
+
+	},
+	"shortdesc": "",
+	"type": "graph"
+}

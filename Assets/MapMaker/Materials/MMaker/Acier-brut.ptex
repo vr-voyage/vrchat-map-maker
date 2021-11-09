@@ -1,0 +1,197 @@
+{
+	"connections": [
+		{
+			"from": "fbm2",
+			"from_port": 0,
+			"to": "math_2",
+			"to_port": 0
+		},
+		{
+			"from": "math_2",
+			"from_port": 0,
+			"to": "math_3",
+			"to_port": 0
+		},
+		{
+			"from": "fbm2_2",
+			"from_port": 0,
+			"to": "math_3",
+			"to_port": 1
+		},
+		{
+			"from": "math_3",
+			"from_port": 0,
+			"to": "normal_map",
+			"to_port": 0
+		},
+		{
+			"from": "math",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 2
+		},
+		{
+			"from": "math_2",
+			"from_port": 0,
+			"to": "math_4",
+			"to_port": 0
+		},
+		{
+			"from": "math_4",
+			"from_port": 0,
+			"to": "math",
+			"to_port": 1
+		},
+		{
+			"from": "normal_map",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 4
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "274",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 919.009216,
+				"y": 137.771454
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 0.579367,
+					"g": 0.691424,
+					"r": 0.725396,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 1,
+				"flags_transparent": false,
+				"metallic": 1,
+				"normal": 1,
+				"roughness": 1,
+				"size": 9,
+				"sss": 0
+			},
+			"type": "material"
+		},
+		{
+			"name": "fbm2",
+			"node_position": {
+				"x": -189.260925,
+				"y": 94.488541
+			},
+			"parameters": {
+				"folds": 0,
+				"iterations": 5,
+				"noise": 1,
+				"persistence": 1.47,
+				"scale_x": 16,
+				"scale_y": 16
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "math_2",
+			"node_position": {
+				"x": 16.672913,
+				"y": 318.243591
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0.48,
+				"op": 2
+			},
+			"type": "math"
+		},
+		{
+			"name": "fbm2_2",
+			"node_position": {
+				"x": -207.426239,
+				"y": -163.973846
+			},
+			"parameters": {
+				"folds": 2,
+				"iterations": 20,
+				"noise": 7,
+				"persistence": 0.59,
+				"scale_x": 512,
+				"scale_y": 2
+			},
+			"type": "fbm2"
+		},
+		{
+			"name": "normal_map",
+			"node_position": {
+				"x": 467.69458,
+				"y": 49.827595
+			},
+			"parameters": {
+				"param0": 10,
+				"param1": 0.17,
+				"param2": 0,
+				"param4": 1
+			},
+			"type": "normal_map"
+		},
+		{
+			"name": "math_3",
+			"node_position": {
+				"x": 210.033401,
+				"y": 86.698486
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0,
+				"op": 14
+			},
+			"type": "math"
+		},
+		{
+			"name": "math",
+			"node_position": {
+				"x": 549.507996,
+				"y": 308.807617
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0,
+				"op": 2
+			},
+			"type": "math"
+		},
+		{
+			"name": "math_4",
+			"node_position": {
+				"x": 254.136566,
+				"y": 431.242126
+			},
+			"parameters": {
+				"clamp": false,
+				"default_in1": 0,
+				"default_in2": 0.22,
+				"op": 2
+			},
+			"type": "math"
+		}
+	],
+	"parameters": {
+
+	},
+	"shortdesc": "",
+	"type": "graph"
+}

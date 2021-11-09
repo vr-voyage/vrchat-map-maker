@@ -1,0 +1,376 @@
+{
+	"connections": [
+		{
+			"from": "colorize",
+			"from_port": 0,
+			"to": "scale",
+			"to_port": 0
+		},
+		{
+			"from": "scale",
+			"from_port": 0,
+			"to": "rotate",
+			"to_port": 0
+		},
+		{
+			"from": "graph_2",
+			"from_port": 0,
+			"to": "gaussian_blur",
+			"to_port": 0
+		},
+		{
+			"from": "make_tileable",
+			"from_port": 0,
+			"to": "Material",
+			"to_port": 0
+		},
+		{
+			"from": "rotate",
+			"from_port": 0,
+			"to": "warp",
+			"to_port": 0
+		},
+		{
+			"from": "warp",
+			"from_port": 0,
+			"to": "make_tileable",
+			"to_port": 0
+		},
+		{
+			"from": "gaussian_blur",
+			"from_port": 0,
+			"to": "colorize",
+			"to_port": 0
+		}
+	],
+	"label": "Graph",
+	"longdesc": "",
+	"name": "264",
+	"node_position": {
+		"x": 0,
+		"y": 0
+	},
+	"nodes": [
+		{
+			"export_paths": {
+				"Godot": "D:/1Daten/_work/temp/material/marble1",
+				"Unity - 3D": "C:/Users/Pouip/Desktop/Blender/Materials/marble"
+			},
+			"name": "Material",
+			"node_position": {
+				"x": 1096,
+				"y": 30
+			},
+			"parameters": {
+				"albedo_color": {
+					"a": 1,
+					"b": 1,
+					"g": 1,
+					"r": 1,
+					"type": "Color"
+				},
+				"ao": 1,
+				"depth_scale": 0.5,
+				"emission_energy": 0,
+				"flags_transparent": false,
+				"metallic": 0,
+				"normal": 1,
+				"roughness": 0.31,
+				"size": 10,
+				"sss": 0
+			},
+			"type": "material"
+		},
+		{
+			"connections": [
+				{
+					"from": "perlin",
+					"from_port": 0,
+					"to": "transform",
+					"to_port": 1
+				},
+				{
+					"from": "perlin",
+					"from_port": 0,
+					"to": "transform",
+					"to_port": 2
+				},
+				{
+					"from": "perlin",
+					"from_port": 0,
+					"to": "transform",
+					"to_port": 0
+				},
+				{
+					"from": "transform",
+					"from_port": 0,
+					"to": "gen_outputs",
+					"to_port": 0
+				}
+			],
+			"label": "Warp1",
+			"longdesc": "",
+			"name": "graph_2",
+			"node_position": {
+				"x": -95,
+				"y": -26.5
+			},
+			"nodes": [
+				{
+					"name": "transform",
+					"node_position": {
+						"x": -259.25,
+						"y": -658
+					},
+					"parameters": {
+						"repeat": true,
+						"rotate": 0,
+						"scale_x": 1,
+						"scale_y": 1,
+						"translate_x": 0.1,
+						"translate_y": 0.315733
+					},
+					"type": "transform"
+				},
+				{
+					"name": "perlin",
+					"node_position": {
+						"x": -502.25,
+						"y": -653
+					},
+					"parameters": {
+						"iterations": 4,
+						"persistence": 1,
+						"scale_x": 4,
+						"scale_y": 4
+					},
+					"type": "perlin"
+				},
+				{
+					"name": "gen_inputs",
+					"node_position": {
+						"x": -670.25,
+						"y": -647.5
+					},
+					"parameters": {
+
+					},
+					"ports": [
+
+					],
+					"type": "ios"
+				},
+				{
+					"name": "gen_outputs",
+					"node_position": {
+						"x": 18.75,
+						"y": -657.5
+					},
+					"parameters": {
+
+					},
+					"ports": [
+						{
+							"name": "port0",
+							"type": "rgba"
+						}
+					],
+					"type": "ios"
+				},
+				{
+					"name": "gen_parameters",
+					"node_position": {
+						"x": -315.75,
+						"y": -893
+					},
+					"parameters": {
+						"param0": 4,
+						"param1": 4,
+						"param2": 4,
+						"param3": 1,
+						"param4": 0.1,
+						"param5": 0.315733
+					},
+					"type": "remote",
+					"widgets": [
+						{
+							"label": "Scale X",
+							"linked_widgets": [
+								{
+									"node": "perlin",
+									"widget": "scale_x"
+								}
+							],
+							"name": "param0",
+							"type": "linked_control"
+						},
+						{
+							"label": "Scale Y",
+							"linked_widgets": [
+								{
+									"node": "perlin",
+									"widget": "scale_y"
+								}
+							],
+							"name": "param1",
+							"type": "linked_control"
+						},
+						{
+							"label": "Iterations",
+							"linked_widgets": [
+								{
+									"node": "perlin",
+									"widget": "iterations"
+								}
+							],
+							"name": "param2",
+							"type": "linked_control"
+						},
+						{
+							"label": "Persistance",
+							"linked_widgets": [
+								{
+									"node": "perlin",
+									"widget": "persistence"
+								}
+							],
+							"name": "param3",
+							"type": "linked_control"
+						},
+						{
+							"label": "Warp X",
+							"linked_widgets": [
+								{
+									"node": "transform",
+									"widget": "translate_x"
+								}
+							],
+							"name": "param4",
+							"type": "linked_control"
+						},
+						{
+							"label": "Warp Y",
+							"linked_widgets": [
+								{
+									"node": "transform",
+									"widget": "translate_y"
+								}
+							],
+							"name": "param5",
+							"type": "linked_control"
+						}
+					]
+				}
+			],
+			"parameters": {
+				"param0": 4,
+				"param1": 4,
+				"param2": 4,
+				"param3": 1,
+				"param4": 0.1,
+				"param5": 0.315733
+			},
+			"shortdesc": "",
+			"type": "graph"
+		},
+		{
+			"name": "colorize",
+			"node_position": {
+				"x": 356,
+				"y": 33.5
+			},
+			"parameters": {
+				"gradient": {
+					"interpolation": 1,
+					"points": [
+						{
+							"a": 1,
+							"b": 0.058594,
+							"g": 0.000229,
+							"pos": 0.529222,
+							"r": 0.003421
+						},
+						{
+							"a": 1,
+							"b": 0.452774,
+							"g": 0.591964,
+							"pos": 0.852872,
+							"r": 0.613281
+						}
+					],
+					"type": "Gradient"
+				}
+			},
+			"type": "colorize"
+		},
+		{
+			"name": "scale",
+			"node_position": {
+				"x": 493,
+				"y": 128.5
+			},
+			"parameters": {
+				"cx": 0,
+				"cy": 0,
+				"scale_x": 1.04,
+				"scale_y": 1.01
+			},
+			"type": "scale"
+		},
+		{
+			"name": "rotate",
+			"node_position": {
+				"x": 627,
+				"y": 13.5
+			},
+			"parameters": {
+				"cx": -0.008845,
+				"cy": -0.01769,
+				"rotate": 46.115
+			},
+			"type": "rotate"
+		},
+		{
+			"name": "gaussian_blur",
+			"node_position": {
+				"x": 175,
+				"y": 139.5
+			},
+			"parameters": {
+				"param0": 9,
+				"param1": 2.8,
+				"param2": 0
+			},
+			"type": "gaussian_blur"
+		},
+		{
+			"name": "make_tileable",
+			"node_position": {
+				"x": 915.713257,
+				"y": 32.987061
+			},
+			"parameters": {
+				"w": 0.125
+			},
+			"type": "make_tileable"
+		},
+		{
+			"name": "warp",
+			"node_position": {
+				"x": 799.65625,
+				"y": 123.605591
+			},
+			"parameters": {
+				"amount": 0.625,
+				"eps": 0.095,
+				"mode": 0
+			},
+			"type": "warp"
+		}
+	],
+	"parameters": {
+
+	},
+	"shortdesc": "",
+	"type": "graph"
+}
