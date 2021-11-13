@@ -28,7 +28,7 @@ public class MapDrawingPane : UdonSharpBehaviour
         int x = Mathf.FloorToInt(relative.x*10) + 4;
         int y = Mathf.FloorToInt(relative.y*10) + 4;
         
-        mapSystem.SetMapTile(x, y);
+        //mapSystem.SetMapTile(x, y);
         //Debug.Log($"Transform : {relative} [{x}, {y}]");
 
     }

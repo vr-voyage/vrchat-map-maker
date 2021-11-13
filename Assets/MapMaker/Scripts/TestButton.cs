@@ -4,11 +4,13 @@ using UnityEngine;
 using VRC.SDKBase;
 using VRC.Udon;
 
-public class MapButton : UdonSharpBehaviour
+public class TestButton : UdonSharpBehaviour
 {
-    public MeshBaker baker;
+
+    public Pencil pencil;
+
     public override void Interact()
     {
-        //baker.NewMess();
+        pencil.NextStratum();
     }
 }
