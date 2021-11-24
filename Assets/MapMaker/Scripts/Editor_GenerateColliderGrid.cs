@@ -52,13 +52,6 @@ namespace Myy
                     DestroyImmediate(collider);
                 }
 
-                MapDrawingPane pane = gameObject.GetComponent<MapDrawingPane>();
-                if (pane == null)
-                {
-                    Debug.LogError("No map drawing pane here :C");
-                    return;
-                }
-
                 /*List<BoxCollider> colliders = new List<BoxCollider>(64);
                 for (float xpos = start; xpos <= end; xpos += size)
                 {

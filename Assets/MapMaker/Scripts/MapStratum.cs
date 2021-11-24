@@ -17,14 +17,24 @@ public class MapStratum : UdonSharpBehaviour
     private int maskX;
     private int maskY;
 
-    private int[] map;
+    public int[] map;
 
-    private CombineInstance[] stratumCombiner;
+    /* FIXME :
+     * I'm making this public since the Garbage Collector will
+     * try to actively remove Mesh References referenced here
+     * when set to private.
+     * So I'm trying to put the whole collection as "public"
+     * in order to stop the GC from collecting the data there.
+     * We'll see if this works though..
+     */
+    public CombineInstance[] stratumCombiner;
 
     public Mesh currentSelection;
     
-    private CombineInstance[] combineCopy;
+    public CombineInstance[] combineCopy;
     private Matrix4x4 positionZero;
+
+    private CombineInstance[] libraryDisplay;
 
     private int currentMeshIndex = 0;
     private int currentTextureIndex = 0;
@@ -85,8 +95,10 @@ public class MapStratum : UdonSharpBehaviour
         maskY  = nTilesY - 1;
     }
 
-    void Start()
+    public void Start()
     {
+        nTilesX = (nTilesX > 0 ? nTilesX : 8);
+        nTilesY = (nTilesY > 0 ? nTilesY : 8);
         currentSelection = new Mesh();
         position = new Vector3(0,0,0);
         positionZero = Matrix4x4.Translate(position);
@@ -111,8 +123,36 @@ public class MapStratum : UdonSharpBehaviour
         InitializeCombiner();
 
         BakeMesh();
-        SetSelectionMeshIndex(1);      
+        SetSelectionMeshIndex(1);
+
+
+        /* FIXME Get this out. The map stratum shouldn't maange inventory display */
+        displayMesh = new Mesh();
+        InitializeLibraryDisplay();
     }
+
+
+    public Mesh displayMesh;
+    /* FIXME Get this out. The map stratum shouldn't maange inventory display */
+    void InitializeLibraryDisplay()
+    {
+        libraryDisplay = new CombineInstance[library.Length];
+        for (int i = 0; i < library.Length; i++)
+        {
+            Mesh m = library[i];
+            CombineInstance ci = new CombineInstance();
+            ci.mesh = m;
+            int pos = (i & 7);
+            Vector3 position = new Vector3(pos * 1.75f, 0,  (i / 8));
+            Debug.Log($"{pos}");
+            ci.transform = Matrix4x4.Translate(position);  
+            libraryDisplay[i] = ci;
+
+        }
+        displayMesh = new Mesh();
+        displayMesh.CombineMeshes(libraryDisplay);
+    }
+    
 
     void BakeMesh()
     {
@@ -122,9 +162,10 @@ public class MapStratum : UdonSharpBehaviour
         currentBakedMesh = mesh;
     }
 
-    void SetupMeshForTextureIndex(int textureIndex)
+    public void SetupMeshForTextureIndex(int textureIndex)
     {
-        Color32[] colors = new Color32[currentSelection.vertices.Length];
+        Mesh newMesh = CopyMesh(currentSelection);
+        Color32[] colors = new Color32[newMesh.vertices.Length];
         int colorsCount = colors.Length;
 
         for (int i = 0; i < colorsCount; i++)
@@ -134,7 +175,9 @@ public class MapStratum : UdonSharpBehaviour
             colors[i] = color;
         }
 
-        currentSelection.colors32 = colors;
+        newMesh.colors32 = colors;
+        currentSelection = newMesh;
+        currentTextureIndex = textureIndex;
         ComputeTileValue();
     }
 
