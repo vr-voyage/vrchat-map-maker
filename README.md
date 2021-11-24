@@ -20,16 +20,16 @@
 # TODO
 
 * [ ] Triplanar shader with Texture2DArray.
-  * [ ] Sample the texture index from the vertex color
+  * [x] Sample the texture index from the vertex color
 * [ ] User drawing interface
   * Marker & Tablet might just work.
-    * [ ] Add a marker & tablet models, with a trigger collider
+    * [x] Add a marker & tablet models, with a trigger collider
       at the tip of the marker.
     * [ ] Pre generate colliders for each tile
-    * [ ] Pregenerate a mesh based on the user selection (mesh + style).
-    * [ ] For each tile touched by the marker, define the
+    * [x] Pregenerate a mesh based on the user selection (mesh + style).
+    * [x] For each tile touched by the marker, define the
       relative CombineInstance.mesh and regenerate the Mesh.
-    * [ ] Add a button to switch from the Ground to the Walls.
+    * [x] Add a button to switch from the Ground to the Walls.
       * [ ] For the walls, only activate the colliders that are near
             a ground tile.
     * [ ] For desktop users, allow them to box or line
