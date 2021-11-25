@@ -41,6 +41,32 @@ public class Pencil : UdonSharpBehaviour
     private Color32 reserved;
 
 
+    private Color32 ColorFromInt(int value)
+    {
+        return new Color32(
+            (byte) ((value >>  0) & 0xff),
+            (byte) ((value >>  8) & 0xff),
+            (byte) ((value >> 16) & 0xff),
+            (byte) ((value >> 24) & 0xff)
+        );
+    }
+
+    public void SaveToTexture()
+    {
+        int currentPixel = saveTexture.width*4;
+        for (int s = 0; s < strates.Length; s++)
+        {
+            int[] mapData = strates[s].map;
+            for (int tile = 0; tile < mapData.Length; tile++)
+            {
+                texturePixels[currentPixel] = ColorFromInt(mapData[tile]);
+                currentPixel++;
+            }
+        }
+        saveTexture.SetPixels32(texturePixels);
+        saveTexture.Apply(true);
+    }
+
     private void SaveMetadata()
     {
         texturePixels[0] = new Color32((byte) 'V', (byte) 'O', (byte) 'Y', (byte) 255);
