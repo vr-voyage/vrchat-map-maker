@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.36880213, g: 0.4014258, b: 0.4856999, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -682,7 +682,6 @@ GameObject:
   - component: {fileID: 574304085}
   - component: {fileID: 574304084}
   - component: {fileID: 574304083}
-  - component: {fileID: 574304087}
   m_Layer: 0
   m_Name: WorldInfos
   m_TagString: Untagged
@@ -772,18 +771,18 @@ MonoBehaviour:
   useAssignedLayers: 0
   DynamicPrefabs: []
   DynamicMaterials:
-  - {fileID: 2100000, guid: e60abf9809251d142b03745b8e834fa8, type: 2}
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: 0fe86c0d3dc55f2409f58bcec337873c, type: 2}
   - {fileID: 2100000, guid: d0b67695c07729145bd52a39159c8f54, type: 2}
-  - {fileID: 2100000, guid: 6c09f29041af02844aac917574bc2edc, type: 2}
+  - {fileID: 2100000, guid: 0fe86c0d3dc55f2409f58bcec337873c, type: 2}
   - {fileID: 2100000, guid: 8a306e49d00128141a66a0bce7a432e3, type: 2}
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 7384590627f556540b7bd744171db89b, type: 2}
   - {fileID: 2100000, guid: 1675720f4e7c7084d850f2cb9283726f, type: 2}
   - {fileID: 2100000, guid: 4876fc9dc009bbe4493553020a561611, type: 2}
   - {fileID: 2100000, guid: 82096aab38f01cb40a1cbf8629a810ba, type: 2}
-  - {fileID: 2100000, guid: 2ae6d09853b93b940b69d181fe49a7ef, type: 2}
+  - {fileID: 2100000, guid: 6c09f29041af02844aac917574bc2edc, type: 2}
   - {fileID: 2100000, guid: 7d59c845635f8134688d7206b1aa3266, type: 2}
+  - {fileID: 2100000, guid: 2ae6d09853b93b940b69d181fe49a7ef, type: 2}
+  - {fileID: 2100000, guid: e60abf9809251d142b03745b8e834fa8, type: 2}
   - {fileID: 2100000, guid: 19f0f5052d7854a46af0f336436572ef, type: 2}
   LightMapsNear: []
   LightMapsFar: []
@@ -854,19 +853,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &574304087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 574304082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 229740497, guid: 4ecd63eff847044b68db9453ce219299, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contentType: 1
 --- !u!20 &574802144 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 6846921230490059447, guid: fb106572afc407d4fa0c82fb7942870b,

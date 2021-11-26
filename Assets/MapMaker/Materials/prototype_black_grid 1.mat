@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: prototype_black_grid 1
-  m_Shader: {fileID: 4800000, guid: 2dcd9e0568e0a6f45b92c60ba2eb16a0, type: 3}
+  m_Shader: {fileID: 4800000, guid: affc81f3d164d734d8f13053effb1c5c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
