@@ -1,3 +1,7 @@
+# Create in VRChat, Import in other editors
+
+![Create in VRChat, Import in other editors](https://raw.githubusercontent.com/vr-voyage/vrchat-map-maker/main/Screenshots/MapMaker-FirstAlpha.png)
+
 # Requirements
 
 * Unity 2019.4.31f1
