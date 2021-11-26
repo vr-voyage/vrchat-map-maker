@@ -156,7 +156,7 @@ Shader "Voyage/VRChat Standard Lite Array Color"
 
         void surf(Input IN, inout SurfaceOutputStandardMobile o)
         {
-            float3 uv = float3(IN.uv_MainTex, clamp(IN.color.r * 255,0,6));
+            float3 uv = float3(IN.uv_MainTex, clamp(IN.color.r * 255,0,64));
             //float uvZ = IN.arrayIndex * 0.2;
             //float4 debugColor = float4(uvZ, uvZ, uvZ, uvZ);
             // Albedo comes from a texture tinted by color
@@ -169,7 +169,7 @@ Shader "Voyage/VRChat Standard Lite Array Color"
             o.Smoothness = metallicGlossMap.a * _Glossiness;
 
             /*UnpackScaleNormal()*/
-            o.Normal = UNITY_SAMPLE_TEX2DARRAY(_BumpMap, uv)*2.0-1.0; //UnpackScaleNormal(UNITY_SAMPLE_TEX2DARRAY(_BumpMap, uv), 1.0);
+            o.Normal = UNITY_SAMPLE_TEX2DARRAY(_BumpMap, uv)*2.0-1.0; /*UnpackScaleNormal(UNITY_SAMPLE_TEX2DARRAY(_BumpMap, uv), -1.0)*/;
             o.Albedo = albedoMap.rgb; //o.Normal; 
             
             #ifdef _EMISSION

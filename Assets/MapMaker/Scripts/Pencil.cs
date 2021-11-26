@@ -32,7 +32,7 @@ public class Pencil : UdonSharpBehaviour
     bool drawing = false;
 
     /* FIXME : Get this out, the pencil shouldn't manage the inventory display */
-    public MeshFilter invetoryDisplay;
+    public MeshFilter inventoryDisplay;
 
     /* FIXME : Get these out, the pencil shouldn't manage the save system */
     public Texture2D saveTexture;
@@ -133,7 +133,7 @@ public class Pencil : UdonSharpBehaviour
     {
         drawing = true;
         /* FIXME : Get this out, the pencil shouldn't manage the inventory display */
-        invetoryDisplay.sharedMesh = strates[currentStratum].displayMesh;
+        inventoryDisplay.sharedMesh = strates[currentStratum].displayMesh;
     }
 
     public override void OnDrop()
@@ -229,6 +229,21 @@ public class Pencil : UdonSharpBehaviour
 
                 }
                 break;
+                case "StrateSelectFloor":
+                {
+                    currentStratum = 0;
+                    /* FIXME : Get this out, the pencil shouldn't manage the inventory display */
+                    inventoryDisplay.sharedMesh = strates[currentStratum].displayMesh;
+                }
+                break;
+                case "StrateSelectWalls":
+                {
+                    currentStratum = 1;
+                    /* FIXME : Get this out, the pencil shouldn't manage the inventory display */
+                    inventoryDisplay.sharedMesh = strates[currentStratum].displayMesh;
+                }
+                break;
+                /*
                 case "StratumSelect":
                 {
                     Vector2Int pos = PosFrom1x1Grid(
@@ -238,17 +253,17 @@ public class Pencil : UdonSharpBehaviour
 
                     currentStratum = pos.y;
 
-                    /* FIXME : Get this out, the pencil shouldn't manage the inventory display */
                     invetoryDisplay.sharedMesh = strates[currentStratum].displayMesh;
                 }
-                break;
+                break;*/
                 case "TextureSelect":
                 {
                     Vector2Int pos = PosFrom1x1Grid(
                         localHitPoint,
                         new Vector2Int(8,2),
                         true);
-                    stratum.SetupMeshForTextureIndex(pos.x);
+                    /* FIXME : Magic value, 8 is the number of texture tiles per row */
+                    stratum.SetupMeshForTextureIndex(pos.y * 8 + pos.x);
                 }
                 break;
                 case "DirectionUp":

@@ -668,7 +668,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 1
-      Data: invetoryDisplay
+      Data: inventoryDisplay
     - Name: $v
       Entry: 7
       Data: 40|UdonSharp.Compiler.FieldDefinition, UdonSharp.Editor
@@ -695,10 +695,10 @@ MonoBehaviour:
       Data: UnityEngineMeshFilter
     - Name: symbolOriginalName
       Entry: 1
-      Data: invetoryDisplay
+      Data: inventoryDisplay
     - Name: symbolUniqueName
       Entry: 1
-      Data: invetoryDisplay
+      Data: inventoryDisplay
     - Name: symbolDefaultValue
       Entry: 6
       Data: 

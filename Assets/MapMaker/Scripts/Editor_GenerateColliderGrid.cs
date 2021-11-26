@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Myy
 {
-    public class TextureArrayGenerator : EditorWindow
+    public class ColliderGridGenerator : EditorWindow
     {
         SerializedObject serialO;
         SerializedProperty gameObjectSerialized;
@@ -28,7 +28,7 @@ namespace Myy
         [MenuItem("Voyage / Setup Collider Grid")]
         public static void ShowWindow()
         {
-            GetWindow(typeof(TextureArrayGenerator), false, "Texture Array Generator");
+            GetWindow(typeof(ColliderGridGenerator), false, "Collider Grid Generator");
         }
 
         private void OnGUI()
