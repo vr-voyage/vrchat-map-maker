@@ -2,6 +2,14 @@
 
 ![Create in VRChat, Import in other editors](https://raw.githubusercontent.com/vr-voyage/vrchat-map-maker/main/Screenshots/MapMaker-FirstAlpha.png)
 
+**Example video**
+
+https://www.youtube.com/watch?v=aemftnUSnws
+
+## Import in Unity
+
+https://github.com/vr-voyage/vrchat-map-maker-unity-importer
+
 # Requirements
 
 * Unity 2019.4.31f1
