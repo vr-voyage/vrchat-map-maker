@@ -1,7 +1,9 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 
 using UnityEngine;
 using UnityEditor;
+
+using UnityEngine.Experimental.Rendering;
 
 namespace Myy
 {
@@ -49,14 +51,21 @@ namespace Myy
                 Texture2D modelTexture = textures[0];
                 int texturesCount = textures.Length;
 
-                Texture2DArray array = new Texture2DArray(
-                    modelTexture.width, modelTexture.height,
-                    texturesCount, modelTexture.format, true);
+                TextureCreationFlags flags = 
+                    (modelTexture.mipmapCount > 1 ? 
+                        TextureCreationFlags.MipChain :
+                        TextureCreationFlags.None);
 
+                Texture2DArray array = new Texture2DArray(
+                    modelTexture.width, modelTexture.height, texturesCount,
+                    modelTexture.graphicsFormat,
+                    flags);
+
+                int nMipmaps = Mathf.Min(array.mipmapCount, textures[0].mipmapCount);
                 for (int t = 0; t < texturesCount; t++)
                 {
                     Texture2D currentTexture = textures[t];
-                    for (int mipMapLevel = 0; mipMapLevel < currentTexture.mipmapCount; mipMapLevel++)
+                    for (int mipMapLevel = 0; mipMapLevel < nMipmaps; mipMapLevel++)
                     {
                         Graphics.CopyTexture(textures[t], 0, mipMapLevel, array, t, mipMapLevel);
                     }
@@ -65,26 +74,28 @@ namespace Myy
                 AssetDatabase.CreateAsset(array, $"Assets/{textureName}.asset");
             }
 
-            if (GUILayout.Button("Generate texture (non-linear)"))
+            /*if (GUILayout.Button("Generate texture (non-linear)"))
             {
                 Texture2D modelTexture = textures[0];
                 int texturesCount = textures.Length;
 
                 Texture2DArray array = new Texture2DArray(
-                    modelTexture.width, modelTexture.height,
-                    texturesCount, modelTexture.format, false);
+                    modelTexture.width, modelTexture.height, texturesCount,
+                    UnityEngine.Experimental.Rendering.GraphicsFormat.RGBA_DXT5_UNorm,
+                    UnityEngine.Experimental.Rendering.TextureCreationFlags.MipChain);
 
+                int nMipmaps = Mathf.Min(array.mipmapCount, textures[0].mipmapCount);
                 for (int t = 0; t < texturesCount; t++)
                 {
                     Texture2D currentTexture = textures[t];
-                    for (int mipMapLevel = 0; mipMapLevel <1; mipMapLevel++)
+                    for (int mipMapLevel = 0; mipMapLevel < nMipmaps; mipMapLevel++)
                     {
                         Graphics.CopyTexture(textures[t], 0, mipMapLevel, array, t, mipMapLevel);
                     }
                 }
 
                 AssetDatabase.CreateAsset(array, $"Assets/{textureName}.asset");
-            }
+            }*/
         }
     }
 }

@@ -169,7 +169,7 @@ Shader "Voyage/VRChat Standard Lite Array Color"
             o.Smoothness = metallicGlossMap.a * _Glossiness;
 
             /*UnpackScaleNormal()*/
-            o.Normal = UNITY_SAMPLE_TEX2DARRAY(_BumpMap, uv)*2.0-1.0; /*UnpackScaleNormal(UNITY_SAMPLE_TEX2DARRAY(_BumpMap, uv), -1.0)*/;
+            o.Normal = UnpackNormal(UNITY_SAMPLE_TEX2DARRAY(_BumpMap, uv));
             o.Albedo = albedoMap.rgb; //o.Normal; 
             
             #ifdef _EMISSION

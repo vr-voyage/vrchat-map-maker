@@ -98,6 +98,7 @@ public class Pencil : UdonSharpBehaviour
             thisPickup.AutoHold = VRC_Pickup.AutoHoldMode.Yes;
             thisPickup.ExactGun = gunPosition;
             thisPickup.orientation = VRC_Pickup.PickupOrientation.Gun;
+            thisPickup.allowManipulationWhenEquipped = false;
         }
 
         viewCamera.enabled = true;
